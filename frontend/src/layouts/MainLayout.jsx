@@ -3,27 +3,22 @@ import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function MainLayout({ children }) {
   return (
-    <div className="min-h-screen bg-slate-100">
-
+    <>
       <Navbar />
-
       <Sidebar />
 
-      <main
-        className="
-        ml-[280px]
-        mt-[70px]
-        p-8
-        min-h-[calc(100vh-70px)]
-        bg-gradient-to-br
-        from-slate-100
-        via-blue-50
-        to-slate-200
-        "
+      <div
+        style={{
+          marginLeft: "300px",
+          marginTop: "72px",
+          minHeight: "calc(100vh - 72px)",
+          padding: "30px",
+          background: "#f1f5f9",
+          overflow: "auto",
+        }}
       >
         {children}
-      </main>
-
-    </div>
+      </div>
+    </>
   );
 }

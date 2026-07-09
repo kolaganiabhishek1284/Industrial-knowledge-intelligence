@@ -1,5 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
+import MainLayout from "./layouts/MainLayout";
+
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Upload from "./pages/Upload/Upload";
@@ -16,15 +18,86 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Login />} />
 
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/upload" element={<Upload />} />
-      <Route path="/chat" element={<AIChat />} />
-      <Route path="/documents" element={<Documents />} />
-      <Route path="/knowledge" element={<KnowledgeGraph />} />
-      <Route path="/maintenance" element={<Maintenance />} />
-      <Route path="/compliance" element={<Compliance />} />
-      <Route path="/analytics" element={<Analytics />} />
-      <Route path="/settings" element={<Settings />} />
+      <Route
+        path="/dashboard"
+        element={
+          <MainLayout>
+            <Dashboard />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/upload"
+        element={
+          <MainLayout>
+            <Upload />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/chat"
+        element={
+          <MainLayout>
+            <AIChat />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/documents"
+        element={
+          <MainLayout>
+            <Documents />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/knowledge"
+        element={
+          <MainLayout>
+            <KnowledgeGraph />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/maintenance"
+        element={
+          <MainLayout>
+            <Maintenance />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/compliance"
+        element={
+          <MainLayout>
+            <Compliance />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/analytics"
+        element={
+          <MainLayout>
+            <Analytics />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/settings"
+        element={
+          <MainLayout>
+            <Settings />
+          </MainLayout>
+        }
+      />
 
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
